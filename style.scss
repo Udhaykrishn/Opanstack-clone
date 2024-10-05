@@ -1,0 +1,646 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // outline: 1px solid red;
+}
+
+$full-width: 100%;
+$padding-range-y: 11.875rem;
+$padding-range-x: 0.5rem;
+$primary-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+
+@mixin flex-section() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin text-design($size, $family, $weight, $line, $color) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+  line-height: $line;
+  color: $color;
+}
+
+body {
+  width: $full-width;
+  min-height: 100vh;
+}
+
+$padding-logo: 0.938rem;
+.container {
+  // outline: 1px solid;
+  width: 100%;
+  padding-left: $padding-range-y;
+  padding-right: $padding-range-y;
+  margin-top: 1.875rem;
+}
+
+.logo {
+  background: url(https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-images-prod/openstack-logo-full.svg)
+    left no-repeat center;
+  height: 2.188rem;
+  width: 8.438rem;
+  cursor: pointer;
+  // padding: $padding-logo $padding-logo;
+  font-size: 1.125rem;
+}
+
+.logo-with-search {
+  display: flex;
+  // outline: 1px solid;
+  transform: translateX(-18px);
+
+  .search {
+    // background-color: red;
+    padding: 0px 30px 0px 20px;
+    // outline: 1px solid;
+    margin-left: 30px;
+    cursor: pointer;
+    @include flex-section();
+
+    i {
+      margin-right: 5px;
+      color: #8a959e;
+      font-size: 12px;
+    }
+    span {
+      @include text-design(12px, $primary-font-family, 400, 17.1429px, #8a959e);
+      text-transform: uppercase;
+    }
+  }
+
+  .nav-links {
+    @include flex-section();
+    ul {
+      @include flex-section();
+      gap: 30px;
+      padding-left: 50px;
+      // outline: 1px solid;
+
+      li {
+        list-style-type: none;
+        text-wrap: nowrap;
+        color: #8a959e;
+        cursor: pointer;
+        @include text-design(12px, $primary-font-family, 400, 20px, #8a958e);
+        i {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}
+
+.join {
+  padding-left: 10px;
+  a {
+    @include text-design(12px, $primary-font-family, 600, 20px, #2a4e68);
+  }
+  i {
+    color: #2a4e68;
+  }
+}
+
+.login-button {
+  background: #2a4e68;
+  padding: 5px 25px;
+  border-radius: 4px;
+  color: #fff;
+  // margin-top: 12px;
+  &:hover {
+    background: #286a9d;
+    color: #fff;
+  }
+}
+
+header {
+  width: $full-width;
+  padding-left: $padding-range-y;
+  padding-right: $padding-range-y;
+  background-color: #161616;
+  color: white;
+  padding-top: $padding-range-x;
+  padding-bottom: $padding-range-x;
+  display: flex;
+  justify-content: space-between;
+
+  .logo-with-header {
+    @include flex-section();
+
+    p {
+      text-wrap: nowrap;
+      font-family: "Jura", sans-serif;
+      font-weight: 700;
+      line-height: 1.035rem;
+      text-align: center;
+      padding-left: 20px;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.main-section {
+  display: flex;
+}
+
+.main-text-content {
+  padding-top: 100px;
+  padding-right: 20px;
+  @include flex-section();
+  flex-direction: column;
+
+  h1 {
+    @include text-design(42px, $primary-font-family, 700, 57px, #00497b);
+  }
+
+  P {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    @include text-design(16px, $primary-font-family, 400, 22px, #888888);
+  }
+
+  .para-after-button {
+    text-wrap: nowrap;
+    margin-right: 86px;
+    span {
+      @include text-design(1rem, $primary-font-family, 700, 22px, #888888);
+      text-wrap: nowrap;
+
+      &:hover {
+        color: #00497b;
+        text-decoration: underline;
+      }
+      i {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .main-button-wrapper {
+    width: 100%;
+    height: auto;
+
+    button {
+      padding: 0.438rem 0.625rem;
+      padding-left: 1.563rem;
+      padding-right: 1.563rem;
+
+      @include text-design(1rem, $primary-font-family, 400, 2rem, white);
+      background: #ed1944;
+      border: 0;
+      outline: 0;
+    }
+  }
+}
+
+.main-landing-image {
+  width: 25rem;
+  height: 25rem;
+}
+
+.second-section {
+  margin-top: 90px;
+
+  .second-section-text {
+    h2 {
+      @include text-design(28px, $primary-font-family, 300, 30.8px, #00497b);
+      padding-top: 40px;
+    }
+
+    p {
+      @include text-design(16px, $primary-font-family, 400, 22px, #888);
+      margin-top: 10px;
+
+      span {
+        color: #00497b;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .second-button-section {
+      width: 100%;
+      margin-top: 30px;
+
+      button {
+        white-space: nowrap;
+        text-align: center;
+        background: #ed1944;
+        padding: 7px 30px;
+        outline: 0;
+        border: 0;
+        min-width: 250px;
+        margin: 0 auto;
+        @include text-design(16px, $primary-font-family, 400, 2, white);
+
+        &:hover {
+          background: #a51b1b;
+        }
+      }
+    }
+  }
+}
+
+.third-section {
+  width: 100%;
+
+  .third-section-sector {
+    @include flex-section();
+    gap: 30px;
+    div {
+      width: 350px;
+      height: 200px;
+      p {
+        text-align: center;
+        @include text-design(16px, $primary-font-family, 400, 22px, #888888);
+      }
+
+      h2 {
+        text-align: center;
+        @include text-design(28px, $primary-font-family, 300, 30.8px, #00497b);
+      }
+      img {
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+      }
+
+      .image-container {
+        @include flex-section();
+      }
+    }
+  }
+}
+
+.fourth-section {
+  margin-top: 240px;
+  .fourth-section-sector {
+    @include flex-section();
+    flex-direction: column;
+
+    h2 {
+      @include text-design(28px, $primary-font-family, 300, 30.8px, #00497b);
+    }
+
+    img {
+      width: 225px;
+      height: 270px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    div {
+      width: 100%;
+      @include flex-section();
+      margin-top: 40px;
+      margin-bottom: 20px;
+      gap: 30px;
+
+      button {
+        @include flex-section();
+        cursor: pointer;
+        height: 40px;
+        white-space: nowrap;
+        min-width: 250px;
+        padding: 7px 30px;
+        margin-bottom: 30px;
+        border: 2px solid #00487b;
+        background: transparent;
+        text-transform: uppercase;
+        @include text-design(16px, $primary-font-family, 400, 2, #00497b);
+
+        &:hover {
+          color: #fff;
+          background: #00487b;
+        }
+      }
+    }
+  }
+}
+
+.fifth-section {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  .fifith-section-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .left-section,
+  .right-section {
+    flex: 1;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    h2 {
+      text-align: center;
+      @include text-design(28px, $primary-font-family, 300, 38px, #2a4e68);
+    }
+    img {
+      width: 195px;
+      height: 104px;
+      margin-top: 20px;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 20px;
+      width: 400px;
+      @include text-design(14px, $primary-font-family, 400, 20px, #888888);
+    }
+
+    button {
+      margin-top: 20px;
+      white-space: nowrap;
+      @include text-design(16px, $primary-font-family, 400, 2, white);
+      background: #ed1944;
+      padding: 7px 30px;
+      text-align: center;
+      text-transform: uppercase;
+      border: 0;
+      outline: 0;
+    }
+  }
+  .left-section {
+    border-right: 1px solid #888888;
+  }
+
+  .right-section {
+    button {
+      margin-top: 50px;
+    }
+  }
+}
+
+.sixth-section {
+  width: 100%;
+  height: 130vh;
+  margin-top: 150px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+
+  .sixth-main-text-section {
+    width: 100%;
+    height: 500px;
+    @include flex-section();
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    @include text-design(28px, $primary-font-family, 300, 38px, #00497b);
+  }
+  p {
+    @include text-design(16px, $primary-font-family, 400, 22px, #888888);
+    margin-top: 30px;
+  }
+  .sixith-image-section {
+    @include flex-section();
+    flex-direction: column;
+
+    .level-by-level-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .image-div {
+        width: 351px;
+        height: 245px;
+
+        img {
+          width: 351px;
+          height: 245px;
+        }
+      }
+
+      $borders: "left", "right", "top";
+
+      .sider-text-section {
+        height: 100%;
+        padding-left: 20px;
+        display: flex;
+        align-items: start;
+        justify-content: space-evenly;
+        flex-direction: column;
+
+        @each $border-size in $borders {
+          border-#{$border-size}: 1px solid #888888;
+        }
+        p {
+          @include text-design(13.3333px, Arial, 400, 22px, #888888);
+        }
+
+        button {
+          @include text-design(16px, $primary-font-family, 400, 32px, #00497b);
+          text-wrap: nowrap;
+          padding: 7px 30px;
+          text-align: center;
+          border: 2px solid #00487b;
+          text-transform: uppercase;
+
+          &:hover {
+            color: #ffffff;
+            background: #00487b;
+          }
+        }
+      }
+    }
+  }
+}
+
+.seventh-section {
+  width: 100%;
+  margin-top: 60px;
+
+  div {
+    a {
+      display: block;
+      text-align: center;
+      @include text-design(16px, $primary-font-family, 400, 22px, #00497b);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    hr {
+      display: block;
+      width: 100%;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .image-section {
+      text-align: center;
+      img {
+        width: 220px;
+        height: 24px;
+      }
+      p {
+        @include text-design(16px, $primary-font-family, 400, 22px, #888888);
+        margin-top: 30px;
+        text-align: center;
+        margin-bottom: 90px;
+
+        span {
+          color: #30739c;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.eight-section {
+  div {
+    width: 100%;
+    background: #ed1944;
+    @include flex-section();
+    flex-direction: column;
+    h2 {
+      margin-top: 50px;
+      @include text-design(24px, $primary-font-family, 400, 26.4px, white);
+    }
+    p {
+      @include text-design(14px, $primary-font-family, 400, 20px, white);
+      margin-top: 10px;
+    }
+    form {
+      width: 100%;
+      padding: 20px;
+      @include flex-section();
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 315px;
+      font-size: 12px;
+      font-weight: 400;
+      caret-color: white;
+      color: white;
+    }
+
+    input,
+    button {
+      border-radius: 4px;
+      border: 0;
+      outline: 0;
+      border: 2px solid white;
+      padding: 10px 20px;
+      background: transparent;
+    }
+
+    input::placeholder {
+      color: white;
+    }
+
+    button {
+      text-transform: uppercase;
+      @include text-design(12px, $primary-font-family, 400, 17.1429px, white);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.footer-section {
+  background: #333333;
+  color: white;
+
+  .footer-container {
+    padding: 100px;
+    display: flex;
+    width: 100%;
+    outline: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    .footer-links {
+      display: flex;
+      gap: 160px;
+
+      h4 {
+        @include text-design(14px, $primary-font-family, 400, 15.4px, white);
+        text-align: center;
+        text-wrap: nowrap;
+      }
+
+      ul {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        list-style-type: none;
+        li {
+          display: block;
+          text-wrap: nowrap;
+          @include text-design(
+            12px,
+            $primary-font-family,
+            400,
+            17.1429px,
+            #888888
+          );
+          margin-top: 10px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-social-section {
+  height: 150px;
+
+  h4 {
+    @include text-design(14px, $primary-font-family, 400, 15.4px, #fff);
+  }
+
+  .social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    i {
+      font-size: 36px;
+    }
+  }
+  p {
+    margin-top: 10px;
+    @include text-design(12px, $primary-font-family, 400, 17.1429px, #888888);
+
+    span {
+      text-decoration: underline;
+    }
+  }
+}
