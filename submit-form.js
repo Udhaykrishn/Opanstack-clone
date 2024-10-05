@@ -15,7 +15,6 @@ form.addEventListener("submit", (e) => {
   } else if (!isEmail(value)) {
     alert("Invalid email address,Try again..");
   } else {
-    alert("Loading...");
     setTimeout(() => {
       window.location.href = "success.html";
     }, 1000);
